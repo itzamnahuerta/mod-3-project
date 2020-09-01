@@ -5,7 +5,7 @@ import com.example.bookstorebackend.models.Axolotl;
 import java.util.ArrayList;
 
 // this is java, add functionality to our axolotl service
-public class AxolotlImpl  implements  AxolotlService {
+public class AxolotlServiceImpl implements  AxolotlService {
 
     @Override
     public Axolotl getAxolotl() {
