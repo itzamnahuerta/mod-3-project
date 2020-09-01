@@ -11,4 +11,11 @@ public class TestController {
     public String endpoint(){
         return "Testing Endpoint";
     }
+
+    // make an endpoint /testEndPoint/name
+    // which will return my name
+    @GetMapping("/name")
+    public String name() {
+        return "Itzamna";
+    }
 }
