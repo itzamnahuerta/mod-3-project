@@ -1,9 +1,10 @@
 package com.example.bookstorebackend.service;
 
 import com.example.bookstorebackend.models.Axolotl;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-
+@Service // this tells spring app this will be a servicce, autowire in controller would not work without this
 // this is java, add functionality to our axolotl service
 public class AxolotlServiceImpl implements  AxolotlService {
 
