@@ -15,8 +15,9 @@ public class AxolotlController {
         Axolotl axolotlVarName = new Axolotl("Takis", 3);
         return axolotlVarName;
     }
+
     @GetMapping("/listall")
-    public Iterable<Axolotl> listCats() {
+    public Iterable<Axolotl> listAxolotl() {
         ArrayList axolotls = new ArrayList<Axolotl>();
         axolotls.add(new Axolotl("Lupe", 6));
         axolotls.add(new Axolotl("Ixtel", 12));
