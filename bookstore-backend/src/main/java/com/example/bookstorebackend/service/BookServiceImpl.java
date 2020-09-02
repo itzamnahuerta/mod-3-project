@@ -26,5 +26,13 @@ public class BookServiceImpl implements BookService {
         bookRepository.deleteById(id);
         return HttpStatus.OK;
     }
+
+
+    @Override
+    public HttpStatus deleteByTitle(String title) {
+        bookRepository.deleteByTitle(title);
+        return HttpStatus.OK;
+    }
+
 }
 
