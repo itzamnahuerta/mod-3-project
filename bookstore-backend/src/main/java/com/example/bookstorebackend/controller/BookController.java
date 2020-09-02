@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/book")
 public class BookController {
     @Autowired
@@ -21,9 +22,10 @@ public class BookController {
     public Book createBook(@RequestBody Book book) {
         return bookService.createBook(book);
     }
-    
-    @DeleteMapping("/{bookId}") // "/book/12"
-    public HttpStatus deleteBook(@PathVariable Long bookId) {
-        return bookService.deleteBook(bookId);
+
+    @DeleteMapping("/{bookTitle}") // "/book/12"
+    public HttpStatus deleteBook(@PathVariable String bookTitle) {
+        return bookService.deleteByTitle(bookTitle);
     }
+
 }
