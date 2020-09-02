@@ -1,8 +1,12 @@
 package com.example.bookstorebackend.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 // attach an entity annotation to connect to our database
 // but first add something to our pom.xlm
-
+@Entity
+@Table(name="books")
 public class Book {
     private Long id;
     private String title;
