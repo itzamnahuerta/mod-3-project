@@ -38,6 +38,17 @@ function App() {
     getBooks()
   }
 
+  async function deleteBook(e) {
+    const { id } = e.target;
+
+    try{
+      axios.delete('http://localhost:8181/book/' + id)
+    }catch(e) {
+      console.error(e, e.message)
+    }
+    getBooks();
+  }
+
   return (
     <div className="App">
         <form 
@@ -71,7 +82,7 @@ function App() {
         </form>
 
         <h3>Books:</h3> 
-        {books ?  books.map(book => <Book book={book} />) : "Loading ..."  }
+        {books ?  books.map(book => <Book book={book} deleteBook={deleteBook} />) : "Loading ..."  }
 
     </div>
   );
@@ -81,6 +92,7 @@ function Book (props) {
   return(
     <div>
       <h1> The title of the book is: { props.book.title} </h1>
+      <button id={props.book.title} onClick={(e) => props.deleteBook(e)}> Delete </button>
     </div>
   )
 }
