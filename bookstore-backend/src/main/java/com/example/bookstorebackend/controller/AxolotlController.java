@@ -22,6 +22,7 @@ public class AxolotlController {
 
     @GetMapping("/listall")
     public Iterable<Axolotl> listAxolotls() {
+
         return axolotlService.listAxolotls();
     }
 }
